@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geometry Calculator BD</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1 id="titleEl">Geometry Calculator BD</h1>
+    <p id="subtitleEl" class="subtitle">Area, perimeter, volume and surface area — with the formula shown for every shape.</p>
+  </div>
+  <button id="langBtn" type="button" class="lang-btn">বাংলা</button>
+</header>
+
+<main>
+  <div class="tabs" role="tablist">
+    <button id="tab2d" type="button" class="tab active">2D Shapes</button>
+    <button id="tab3d" type="button" class="tab">3D Shapes</button>
+  </div>
+
+  <section class="card">
+    <h2 id="chooseLabel">Choose a shape</h2>
+    <div id="shapeChips" class="chips"></div>
+    <p id="hintEl" class="hint"></p>
+    <div id="diagramEl" class="diagram" aria-hidden="true"></div>
+
+    <label id="unitLabel" for="unitSelect">Input unit</label>
+    <select id="unitSelect"></select>
+
+    <form id="fieldsForm" novalidate></form>
+
+    <p id="errorEl" class="error" hidden></p>
+    <div class="actions">
+      <button id="calcBtn" type="button" class="primary">Calculate</button>
+      <button id="clearBtn" type="button">Clear</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 id="resultsLabel">Results</h2>
+    <p id="noResultEl" class="muted">Enter the measurements and press Calculate.</p>
+    <div id="resultBox" hidden>
+      <p><strong id="formulaLabel">Formula</strong>: <span id="formulaEl"></span></p>
+      <div id="resultRows"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="row-between">
+      <h2 id="historyLabel">History</h2>
+      <button id="clearHistoryBtn" type="button" class="small">Clear history</button>
+    </div>
+    <p id="historyEmpty" class="muted">No calculations yet. Your last 20 results will appear here.</p>
+    <ul id="historyList" class="history"></ul>
+  </section>
+
+  <footer>
+    <p id="disclaimerEl">Educational tool. Results use standard geometry formulas and are rounded to 2 decimal places. Check critical measurements yourself before building or buying materials.</p>
+  </footer>
+</main>
+
+<script src="logic.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
